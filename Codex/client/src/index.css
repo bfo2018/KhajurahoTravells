@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-stone-50 text-ink antialiased;
+  background:
+    radial-gradient(circle at top left, rgba(255, 217, 167, 0.9), transparent 25%),
+    linear-gradient(180deg, #fff9f2 0%, #fffdfb 45%, #f8f3ec 100%);
+}
+
+#root {
+  @apply min-h-screen;
+}
+
+.glass-panel {
+  @apply rounded-[28px] border border-white/60 bg-white/75 shadow-soft backdrop-blur;
+}
+
+.section-shell {
+  @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+}
+
+.section-title {
+  @apply font-display text-4xl leading-tight text-ink md:text-5xl;
+}
+
+.eyebrow {
+  @apply text-xs font-bold uppercase tracking-[0.28em] text-dune;
+}
+
+.primary-button {
+  @apply inline-flex items-center justify-center rounded-full bg-gradient-to-r from-dune to-bronze px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-orange-200 transition hover:-translate-y-0.5;
+}
+
+.secondary-button {
+  @apply inline-flex items-center justify-center rounded-full border border-stone-200 bg-white px-6 py-3 text-sm font-semibold text-ink transition hover:-translate-y-0.5;
+}

@@ -1,0 +1,14 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#F6EFE8"/>
+  <rect width="1200" height="408" fill="#DCE9F0"/>
+  <path d="M0 552C177 517 360 475 543 443C766 403 1000 419 1200 530V800H0V552Z" fill="#C29C80"/>
+  <rect y="613" width="1200" height="187" fill="#312722"/>
+  <path d="M203 577L390 493H722L900 577H1024V653H180V577H203Z" fill="#7D4823"/>
+  <path d="M382 512H705L825 571H299L382 512Z" fill="#D5E5F0"/>
+  <circle cx="336" cy="659" r="49" fill="#111111"/>
+  <circle cx="336" cy="659" r="20" fill="#ABB1B8"/>
+  <circle cx="869" cy="659" r="49" fill="#111111"/>
+  <circle cx="869" cy="659" r="20" fill="#ABB1B8"/>
+  <text x="89" y="110" fill="#2D241F" font-family="Arial" font-size="48" font-weight="700">Outstation Power Tour</text>
+  <text x="89" y="158" fill="#725B4C" font-family="Arial" font-size="26">Strong route handling for premium travelers</text>
+</svg>

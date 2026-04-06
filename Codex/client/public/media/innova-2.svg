@@ -1,0 +1,14 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#EFE4D6"/>
+  <rect width="1200" height="420" fill="#F8DDA7"/>
+  <path d="M0 534C153 514 309 467 498 431C691 394 934 405 1200 512V800H0V534Z" fill="#CBA37C"/>
+  <path d="M117 600H1079V675H117V600Z" fill="#3A302C"/>
+  <path d="M232 578L388 513H740L877 578H966V657H204V578H232Z" fill="#566475"/>
+  <path d="M366 528H714L814 571H305L366 528Z" fill="#DDE7F0"/>
+  <circle cx="347" cy="670" r="49" fill="#181818"/>
+  <circle cx="347" cy="670" r="20" fill="#A6AAB0"/>
+  <circle cx="824" cy="670" r="49" fill="#181818"/>
+  <circle cx="824" cy="670" r="20" fill="#A6AAB0"/>
+  <text x="88" y="108" fill="#2F241D" font-family="Arial" font-size="52" font-weight="700">Airport Pickup Ready</text>
+  <text x="88" y="158" fill="#6F5747" font-family="Arial" font-size="26">Spacious comfort from Khajuraho to Panna</text>
+</svg>

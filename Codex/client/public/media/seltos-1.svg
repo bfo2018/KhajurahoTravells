@@ -1,0 +1,14 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#FFF6EE"/>
+  <circle cx="968" cy="136" r="78" fill="#F6C56D"/>
+  <path d="M0 544C180 522 321 474 505 438C706 400 961 418 1200 512V800H0V544Z" fill="#D7A173"/>
+  <rect y="607" width="1200" height="193" fill="#40312A"/>
+  <path d="M218 582L392 509H739L900 582H989V653H191V582H218Z" fill="#E67330"/>
+  <path d="M382 525H709L810 576H310L382 525Z" fill="#F4F8FB"/>
+  <circle cx="346" cy="658" r="46" fill="#131313"/>
+  <circle cx="346" cy="658" r="19" fill="#AAB0B8"/>
+  <circle cx="849" cy="658" r="46" fill="#131313"/>
+  <circle cx="849" cy="658" r="19" fill="#AAB0B8"/>
+  <text x="88" y="110" fill="#32251E" font-family="Arial" font-size="52" font-weight="700">Kia Seltos</text>
+  <text x="88" y="160" fill="#7B5A43" font-family="Arial" font-size="26">Premium city SUV for Khajuraho visitors</text>
+</svg>

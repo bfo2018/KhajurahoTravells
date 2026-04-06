@@ -1,0 +1,14 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#F4EEE6"/>
+  <circle cx="989" cy="135" r="82" fill="#F2BD56"/>
+  <path d="M0 550C190 500 394 466 577 452C800 434 1020 458 1200 534V800H0V550Z" fill="#B88D6A"/>
+  <rect y="613" width="1200" height="187" fill="#302622"/>
+  <path d="M190 579L381 495H730L900 579H1022V656H172V579H190Z" fill="#1D2025"/>
+  <path d="M382 514H707L823 572H301L382 514Z" fill="#D2E2ED"/>
+  <circle cx="333" cy="661" r="49" fill="#111111"/>
+  <circle cx="333" cy="661" r="20" fill="#A9AFB5"/>
+  <circle cx="866" cy="661" r="49" fill="#111111"/>
+  <circle cx="866" cy="661" r="20" fill="#A9AFB5"/>
+  <text x="82" y="108" fill="#2D241F" font-family="Arial" font-size="52" font-weight="700">Scorpio N</text>
+  <text x="82" y="158" fill="#70594A" font-family="Arial" font-size="26">Premium SUV with bold road presence</text>
+</svg>

@@ -1,0 +1,14 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#F4ECE2"/>
+  <rect width="1200" height="405" fill="#E1EEF5"/>
+  <path d="M0 548C191 516 365 470 530 431C767 374 1001 399 1200 524V800H0V548Z" fill="#CCA07E"/>
+  <rect y="610" width="1200" height="190" fill="#322822"/>
+  <path d="M218 579L391 507H727L883 579H982V649H190V579H218Z" fill="#2D5B63"/>
+  <path d="M374 522H698L795 573H308L374 522Z" fill="#D0E3EE"/>
+  <circle cx="342" cy="655" r="45" fill="#121212"/>
+  <circle cx="342" cy="655" r="18" fill="#A5AAB1"/>
+  <circle cx="834" cy="655" r="45" fill="#121212"/>
+  <circle cx="834" cy="655" r="18" fill="#A5AAB1"/>
+  <text x="84" y="110" fill="#2E241E" font-family="Arial" font-size="48" font-weight="700">Executive Airport Ride</text>
+  <text x="84" y="160" fill="#715B4B" font-family="Arial" font-size="26">Stylish arrival and departure movement</text>
+</svg>

@@ -1,0 +1,14 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#FFF4E8"/>
+  <rect width="1200" height="260" fill="#F7DAB2"/>
+  <path d="M0 420L259 369L390 483L548 330L690 454L843 298L1022 468L1200 390V800H0V420Z" fill="#C8824F"/>
+  <path d="M291 0H910V800H291V0Z" fill="url(#paint0_linear_1_2)" fill-opacity="0.48"/>
+  <text x="90" y="112" fill="#3B271D" font-family="Arial" font-size="52" font-weight="700">Raneh Falls Route</text>
+  <text x="90" y="160" fill="#7B5845" font-family="Arial" font-size="26">Golden hour canyon and waterfall experience</text>
+  <defs>
+    <linearGradient id="paint0_linear_1_2" x1="600.5" y1="0" x2="600.5" y2="800" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FBF6F0"/>
+      <stop offset="1" stop-color="#96C9E9"/>
+    </linearGradient>
+  </defs>
+</svg>

@@ -1,0 +1,9 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#EEF3EA"/>
+  <rect width="1200" height="320" fill="#D2E3D3"/>
+  <path d="M0 430C149 444 311 386 434 384C609 381 754 450 930 430C1046 417 1138 374 1200 352V800H0V430Z" fill="#6C8C6E"/>
+  <path d="M0 565C120 531 296 544 435 501C563 462 707 451 829 503C964 560 1105 556 1200 533V800H0V565Z" fill="#41644A"/>
+  <rect y="650" width="1200" height="150" fill="#283C2E"/>
+  <text x="92" y="118" fill="#223225" font-family="Arial" font-size="52" font-weight="700">Panna Escape</text>
+  <text x="92" y="170" fill="#415A47" font-family="Arial" font-size="26">Forest route and wildlife day trip coverage</text>
+</svg>

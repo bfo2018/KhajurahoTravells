@@ -1,0 +1,14 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#FFF5EB"/>
+  <rect width="1200" height="390" fill="#F0DAB9"/>
+  <path d="M0 554C178 532 348 504 525 471C749 430 986 401 1200 451V800H0V554Z" fill="#CF955D"/>
+  <rect y="610" width="1200" height="190" fill="#382C26"/>
+  <path d="M200 577L391 494H723L898 577H1027V651H179V577H200Z" fill="#4F6770"/>
+  <path d="M381 511H706L822 570H299L381 511Z" fill="#E2EEF4"/>
+  <circle cx="332" cy="657" r="49" fill="#131313"/>
+  <circle cx="332" cy="657" r="20" fill="#A3A8B0"/>
+  <circle cx="866" cy="657" r="49" fill="#131313"/>
+  <circle cx="866" cy="657" r="20" fill="#A3A8B0"/>
+  <text x="88" y="112" fill="#2E231C" font-family="Arial" font-size="48" font-weight="700">VIP Guest Movement</text>
+  <text x="88" y="160" fill="#715747" font-family="Arial" font-size="26">Confident premium ride for special bookings</text>
+</svg>

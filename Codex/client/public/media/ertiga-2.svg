@@ -1,0 +1,14 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#FFF4EB"/>
+  <circle cx="1038" cy="120" r="74" fill="#F3C96D"/>
+  <path d="M0 548C176 488 378 449 580 431C769 414 994 432 1200 526V800H0V548Z" fill="#D3A179"/>
+  <rect y="612" width="1200" height="188" fill="#43342B"/>
+  <path d="M226 584L376 531H712L843 584H930V653H204V584H226Z" fill="#3F5A69"/>
+  <path d="M354 542H677L778 579H300L354 542Z" fill="#D2E3F0"/>
+  <circle cx="332" cy="659" r="44" fill="#161616"/>
+  <circle cx="332" cy="659" r="17" fill="#AEB4BB"/>
+  <circle cx="801" cy="659" r="44" fill="#161616"/>
+  <circle cx="801" cy="659" r="17" fill="#AEB4BB"/>
+  <text x="84" y="108" fill="#2C221E" font-family="Arial" font-size="48" font-weight="700">Hotel & Station Transfer</text>
+  <text x="84" y="156" fill="#705848" font-family="Arial" font-size="26">Balanced pricing with full AC comfort</text>
+</svg>

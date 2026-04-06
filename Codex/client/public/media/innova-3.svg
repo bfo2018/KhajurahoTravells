@@ -1,0 +1,14 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#FFF3E4"/>
+  <circle cx="1009" cy="130" r="64" fill="#ECB45C"/>
+  <path d="M0 562C153 520 299 503 495 474C718 441 944 368 1200 306V800H0V562Z" fill="#D79E63"/>
+  <rect y="598" width="1200" height="202" fill="#4A3930"/>
+  <path d="M216 566L375 500H756L911 566H1008V639H188V566H216Z" fill="#202833"/>
+  <path d="M355 517H721L829 559H299L355 517Z" fill="#B9D0DE"/>
+  <circle cx="344" cy="648" r="48" fill="#141414"/>
+  <circle cx="344" cy="648" r="19" fill="#9CA3AF"/>
+  <circle cx="851" cy="648" r="48" fill="#141414"/>
+  <circle cx="851" cy="648" r="19" fill="#9CA3AF"/>
+  <text x="86" y="108" fill="#2F241D" font-family="Arial" font-size="52" font-weight="700">Outstation Comfort</text>
+  <text x="86" y="158" fill="#7C5A40" font-family="Arial" font-size="26">Reliable family ride across Madhya Pradesh</text>
+</svg>

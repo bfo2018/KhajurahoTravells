@@ -1,0 +1,14 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#F5EADB"/>
+  <rect width="1200" height="400" fill="#EDD7C0"/>
+  <path d="M0 542C170 522 309 504 487 469C717 423 937 393 1200 457V800H0V542Z" fill="#D28E53"/>
+  <rect y="603" width="1200" height="197" fill="#493931"/>
+  <path d="M223 573L366 520H707L844 573H932V645H195V573H223Z" fill="#81461F"/>
+  <path d="M341 531H680L780 568H286L341 531Z" fill="#F9EFE7"/>
+  <circle cx="327" cy="650" r="45" fill="#151515"/>
+  <circle cx="327" cy="650" r="18" fill="#9DA3AB"/>
+  <circle cx="804" cy="650" r="45" fill="#151515"/>
+  <circle cx="804" cy="650" r="18" fill="#9DA3AB"/>
+  <text x="90" y="112" fill="#32261F" font-family="Arial" font-size="48" font-weight="700">Local Darshan Ready</text>
+  <text x="90" y="160" fill="#755846" font-family="Arial" font-size="26">Comfortable full-day booking option</text>
+</svg>

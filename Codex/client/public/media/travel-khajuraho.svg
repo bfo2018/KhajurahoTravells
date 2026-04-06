@@ -1,0 +1,12 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#FFF5E8"/>
+  <circle cx="975" cy="132" r="78" fill="#F3C065"/>
+  <path d="M0 565C193 517 348 477 534 430C741 379 964 355 1200 295V800H0V565Z" fill="#D7A26A"/>
+  <rect x="118" y="418" width="244" height="206" rx="10" fill="#C58E5A"/>
+  <path d="M181 418H300L361 282H239L181 418Z" fill="#BE8050"/>
+  <rect x="375" y="353" width="296" height="271" rx="12" fill="#D0A173"/>
+  <path d="M455 353H593L668 170H528L455 353Z" fill="#C68B57"/>
+  <path d="M844 606C906 565 1002 559 1084 606V800H844V606Z" fill="#B97742"/>
+  <text x="90" y="112" fill="#2E241E" font-family="Arial" font-size="52" font-weight="700">Khajuraho Heritage</text>
+  <text x="90" y="162" fill="#745749" font-family="Arial" font-size="26">Temple route visuals for homepage and gallery</text>
+</svg>

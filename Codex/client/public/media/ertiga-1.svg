@@ -1,0 +1,14 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#F7EFE6"/>
+  <rect width="1200" height="390" fill="#D8E7EF"/>
+  <path d="M0 530C163 522 292 497 453 470C677 432 949 451 1200 526V800H0V530Z" fill="#D9B089"/>
+  <rect y="604" width="1200" height="196" fill="#3E312B"/>
+  <path d="M232 577L383 523H703L839 577H926V648H206V577H232Z" fill="#A33C30"/>
+  <path d="M358 535H668L772 572H300L358 535Z" fill="#E7F2F6"/>
+  <circle cx="330" cy="652" r="45" fill="#1A1A1A"/>
+  <circle cx="330" cy="652" r="18" fill="#A3A7AE"/>
+  <circle cx="801" cy="652" r="45" fill="#1A1A1A"/>
+  <circle cx="801" cy="652" r="18" fill="#A3A7AE"/>
+  <text x="90" y="106" fill="#2C241E" font-family="Arial" font-size="52" font-weight="700">Maruti Ertiga</text>
+  <text x="90" y="156" fill="#705A49" font-family="Arial" font-size="26">Budget-friendly comfort for family travel</text>
+</svg>

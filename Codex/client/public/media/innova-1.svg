@@ -1,0 +1,14 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#F5E7D4"/>
+  <circle cx="965" cy="162" r="84" fill="#F2C777"/>
+  <path d="M0 576C132 530 232 498 343 480C476 458 620 466 780 442C932 420 1057 364 1200 302V800H0V576Z" fill="#D7B18B"/>
+  <path d="M100 575H1100V642H100V575Z" fill="#44312A"/>
+  <path d="M200 558L371 478H743L902 558H998V624H172V558H200Z" fill="#8A4D26"/>
+  <path d="M342 494H700L822 552H276L342 494Z" fill="#F7F0E7"/>
+  <circle cx="338" cy="633" r="50" fill="#1D1D1D"/>
+  <circle cx="338" cy="633" r="21" fill="#9EA4AC"/>
+  <circle cx="842" cy="633" r="50" fill="#1D1D1D"/>
+  <circle cx="842" cy="633" r="21" fill="#9EA4AC"/>
+  <text x="96" y="118" fill="#3A281D" font-family="Arial" font-size="52" font-weight="700">Toyota Innova</text>
+  <text x="96" y="172" fill="#7A5A44" font-family="Arial" font-size="26">Khajuraho temple tours and family travel</text>
+</svg>
