@@ -8,12 +8,14 @@ const trackingState = {
   }
 };
 
+const META_PIXEL_ID = "936715562677455";
+
 function getGaId() {
   return import.meta.env.VITE_GA_MEASUREMENT_ID;
 }
 
 function getPixelId() {
-  return import.meta.env.VITE_FB_PIXEL_ID;
+  return META_PIXEL_ID;
 }
 
 function appendScript(id, src) {
