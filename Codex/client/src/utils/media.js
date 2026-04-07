@@ -1,12 +1,8 @@
+const API_BASE_URL = "https://khajurahotravells.onrender.com/api";
+
 export function getApiOrigin() {
-  const apiUrl = import.meta.env.VITE_API_URL;
-
-  if (!apiUrl) {
-    return "";
-  }
-
   try {
-    const url = new URL(apiUrl, window.location.origin);
+    const url = new URL(API_BASE_URL, window.location.origin);
     return url.origin;
   } catch {
     return "";
