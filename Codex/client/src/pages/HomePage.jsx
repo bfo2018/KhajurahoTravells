@@ -3,6 +3,7 @@ import { ArrowRight, CircleCheckBig, Languages, Plane, Route, ShieldCheck } from
 import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import api from "../api/client";
+import { CardGridLoader } from "../components/ContentLoader";
 import SectionTitle from "../components/SectionTitle";
 import CarCard from "../components/CarCard";
 import Seo from "../components/Seo";
@@ -18,6 +19,8 @@ export default function HomePage() {
   const [featuredCars, setFeaturedCars] = useState([]);
   const [packages, setPackages] = useState([]);
   const [blogs, setBlogs] = useState([]);
+  const [loadingFeaturedCars, setLoadingFeaturedCars] = useState(true);
+  const [loadingPackages, setLoadingPackages] = useState(true);
   const [bookingForm, setBookingForm] = useState({
     pickupLocation: "Khajuraho Airport",
     dropLocation: "Western Temple Group",
@@ -27,9 +30,40 @@ export default function HomePage() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    api.get("/cars/featured").then(({ data }) => setFeaturedCars(data));
-    api.get("/packages").then(({ data }) => setPackages(data.slice(0, 3)));
+    let active = true;
+
+    setLoadingFeaturedCars(true);
+    setLoadingPackages(true);
+
+    api.get("/cars/featured")
+      .then(({ data }) => {
+        if (active) {
+          setFeaturedCars(data);
+        }
+      })
+      .finally(() => {
+        if (active) {
+          setLoadingFeaturedCars(false);
+        }
+      });
+
+    api.get("/packages")
+      .then(({ data }) => {
+        if (active) {
+          setPackages(data.slice(0, 3));
+        }
+      })
+      .finally(() => {
+        if (active) {
+          setLoadingPackages(false);
+        }
+      });
+
     api.get("/blogs").then(({ data }) => setBlogs(data.slice(0, 3)));
+
+    return () => {
+      active = false;
+    };
   }, []);
 
   return (
@@ -224,11 +258,19 @@ export default function HomePage() {
             title="Cars tourists ask for again and again"
             description="Each vehicle has a full details page with gallery, pricing, driver profile, and direct booking flow."
           />
-          <div className="mt-10 grid gap-6 lg:grid-cols-2 xl:grid-cols-4">
-            {featuredCars.map((car) => (
-              <CarCard key={car._id} car={car} />
-            ))}
-          </div>
+          {loadingFeaturedCars ? (
+            <CardGridLoader
+              count={4}
+              variant="car"
+              columnsClassName="mt-10 grid gap-6 lg:grid-cols-2 xl:grid-cols-4"
+            />
+          ) : (
+            <div className="mt-10 grid gap-6 lg:grid-cols-2 xl:grid-cols-4">
+              {featuredCars.map((car) => (
+                <CarCard key={car._id} car={car} />
+              ))}
+            </div>
+          )}
         </section>
 
         <section className="section-shell py-10">
@@ -237,40 +279,48 @@ export default function HomePage() {
             title="Fixed-price tours for the routes travelers book most"
             description="Choose a ready-made package with clear included kilometers and extra-kilometer pricing."
           />
-          <div className="mt-10 grid gap-6 lg:grid-cols-3">
-            {packages.map((travelPackage) => (
-              <div key={travelPackage._id} className="glass-panel relative p-6">
-                {travelPackage.bestSeller && (
-                  <span className="absolute right-5 top-5 rounded-full bg-dune px-3 py-1 text-xs font-bold uppercase tracking-[0.2em] text-white">
-                    Best Seller
-                  </span>
-                )}
-                <p className="eyebrow">{travelPackage.duration}</p>
-                <h3 className="mt-4 font-display text-3xl text-ink">{travelPackage.name}</h3>
-                <p className="mt-3 text-sm leading-7 text-stone-600">{travelPackage.description}</p>
-                <div className="mt-6 grid gap-3 text-sm text-stone-600">
-                  <div className="rounded-2xl bg-stone-100 px-4 py-3">Base Price: Rs. {travelPackage.price}</div>
-                  <div className="rounded-2xl bg-stone-100 px-4 py-3">Included KM: {travelPackage.includedKm || "Route based"}</div>
-                  <div className="rounded-2xl bg-stone-100 px-4 py-3">Extra: Rs. {travelPackage.extraPerKm}/km</div>
+          {loadingPackages ? (
+            <CardGridLoader
+              count={3}
+              variant="package"
+              columnsClassName="mt-10 grid gap-6 lg:grid-cols-3"
+            />
+          ) : (
+            <div className="mt-10 grid gap-6 lg:grid-cols-3">
+              {packages.map((travelPackage) => (
+                <div key={travelPackage._id} className="glass-panel relative p-6">
+                  {travelPackage.bestSeller && (
+                    <span className="absolute right-5 top-5 rounded-full bg-dune px-3 py-1 text-xs font-bold uppercase tracking-[0.2em] text-white">
+                      Best Seller
+                    </span>
+                  )}
+                  <p className="eyebrow">{travelPackage.duration}</p>
+                  <h3 className="mt-4 font-display text-3xl text-ink">{travelPackage.name}</h3>
+                  <p className="mt-3 text-sm leading-7 text-stone-600">{travelPackage.description}</p>
+                  <div className="mt-6 grid gap-3 text-sm text-stone-600">
+                    <div className="rounded-2xl bg-stone-100 px-4 py-3">Base Price: Rs. {travelPackage.price}</div>
+                    <div className="rounded-2xl bg-stone-100 px-4 py-3">Included KM: {travelPackage.includedKm || "Route based"}</div>
+                    <div className="rounded-2xl bg-stone-100 px-4 py-3">Extra: Rs. {travelPackage.extraPerKm}/km</div>
+                  </div>
+                  <div className="mt-6 flex gap-3">
+                    <Link
+                      to={`/booking?package=${travelPackage._id}`}
+                      className="primary-button flex-1"
+                      onClick={() => trackPackageClick(travelPackage)}
+                    >
+                      Book Package
+                    </Link>
+                    <Link
+                      to={`/packages/${travelPackage.slug || slugify(travelPackage.name)}`}
+                      className="secondary-button flex-1"
+                    >
+                      View Details
+                    </Link>
+                  </div>
                 </div>
-                <div className="mt-6 flex gap-3">
-                  <Link
-                    to={`/booking?package=${travelPackage._id}`}
-                    className="primary-button flex-1"
-                    onClick={() => trackPackageClick(travelPackage)}
-                  >
-                    Book Package
-                  </Link>
-                  <Link
-                    to={`/packages/${travelPackage.slug || slugify(travelPackage.name)}`}
-                    className="secondary-button flex-1"
-                  >
-                    View Details
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
         </section>
 
         <section className="section-shell py-10">

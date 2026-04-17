@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import api from "../api/client";
+import { InlineFieldLoader } from "../components/ContentLoader";
 import Seo from "../components/Seo";
 import { formatCurrency } from "../utils/formatters";
 import { resolveMediaUrl } from "../utils/media";
@@ -29,6 +30,8 @@ export default function BookingPage() {
   const { user, logout } = useAuth();
   const [cars, setCars] = useState([]);
   const [packages, setPackages] = useState([]);
+  const [carsLoading, setCarsLoading] = useState(true);
+  const [packagesLoading, setPackagesLoading] = useState(true);
   const [error, setError] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [distanceMode, setDistanceMode] = useState("loading");
@@ -95,20 +98,41 @@ export default function BookingPage() {
   }, [user]);
 
   useEffect(() => {
+    let active = true;
+
+    setCarsLoading(true);
+    setPackagesLoading(true);
+
     api.get("/cars").then(({ data }) => {
+      if (!active) return;
+
       setCars(data);
       if (!initialPackageId && !searchParams.get("car") && data[0]) {
         setForm((current) => ({ ...current, carId: data[0]._id }));
       }
+    }).finally(() => {
+      if (active) {
+        setCarsLoading(false);
+      }
     });
 
     api.get("/packages").then(({ data }) => {
+      if (!active) return;
+
       setPackages(data);
       if (initialPackageId) return;
       if (data[0]) {
         setForm((current) => ({ ...current, packageId: current.packageId || data[0]._id }));
       }
+    }).finally(() => {
+      if (active) {
+        setPackagesLoading(false);
+      }
     });
+
+    return () => {
+      active = false;
+    };
   }, [initialPackageId, searchParams]);
 
   const selectedCar = useMemo(
@@ -490,17 +514,19 @@ export default function BookingPage() {
                   className="mt-2 w-full rounded-2xl border border-stone-200 px-4 py-3"
                   value={form.carId}
                   required
+                  disabled={carsLoading}
                   onChange={(event) =>
                     setForm((current) => ({ ...current, carId: event.target.value }))
                   }
                 >
-                  <option value="">Select a car</option>
+                  <option value="">{carsLoading ? "Loading cars..." : "Select a car"}</option>
                   {cars.map((car) => (
                     <option key={car._id} value={car._id}>
                       {car.name}
                     </option>
                   ))}
                 </select>
+                {carsLoading && <p className="mt-2 text-xs text-stone-500">Fetching available cars from the API.</p>}
               </label>
             ) : (
               <label className="text-sm font-medium text-stone-700">
@@ -509,17 +535,19 @@ export default function BookingPage() {
                   className="mt-2 w-full rounded-2xl border border-stone-200 px-4 py-3"
                   value={form.packageId}
                   required
+                  disabled={packagesLoading}
                   onChange={(event) =>
                     setForm((current) => ({ ...current, packageId: event.target.value }))
                   }
                 >
-                  <option value="">Select a package</option>
+                  <option value="">{packagesLoading ? "Loading packages..." : "Select a package"}</option>
                   {packages.map((travelPackage) => (
                     <option key={travelPackage._id} value={travelPackage._id}>
                       {travelPackage.name}
                     </option>
                   ))}
                 </select>
+                {packagesLoading && <p className="mt-2 text-xs text-stone-500">Fetching available packages from the API.</p>}
               </label>
             )}
 
@@ -539,6 +567,11 @@ export default function BookingPage() {
             </label>
 
             {form.bookingType === "CAR" ? (
+              carsLoading ? (
+                <div className="md:col-span-2">
+                  <InlineFieldLoader label="Car pricing and route options are loading from the API..." />
+                </div>
+              ) : (
               distanceMode === "manual" ? (
                 <div className="rounded-2xl bg-stone-100 px-4 py-4 text-sm text-stone-600 md:col-span-2">
                   We could not estimate this route automatically right now. Please contact us on{" "}
@@ -553,22 +586,29 @@ export default function BookingPage() {
                   and our team will help you quickly.
                 </div>
               ) : null
+              )
             ) : (
-              <label className="text-sm font-medium text-stone-700">
-                Extra KM
-                <input
-                  type="number"
-                  className="mt-2 w-full rounded-2xl border border-stone-200 px-4 py-3"
-                  value={form.extraKm}
-                  min="0"
-                  onChange={(event) =>
-                    setForm((current) => ({ ...current, extraKm: event.target.value }))
-                  }
-                />
-                <p className="mt-2 text-xs leading-5 text-stone-500">
-                  Final price = base package price + extra KM × extra per KM.
-                </p>
-              </label>
+              packagesLoading ? (
+                <div className="md:col-span-2">
+                  <InlineFieldLoader label="Package pricing details are loading from the API..." />
+                </div>
+              ) : (
+                <label className="text-sm font-medium text-stone-700">
+                  Extra KM
+                  <input
+                    type="number"
+                    className="mt-2 w-full rounded-2xl border border-stone-200 px-4 py-3"
+                    value={form.extraKm}
+                    min="0"
+                    onChange={(event) =>
+                      setForm((current) => ({ ...current, extraKm: event.target.value }))
+                    }
+                  />
+                  <p className="mt-2 text-xs leading-5 text-stone-500">
+                    Final price = base package price + extra KM × extra per KM.
+                  </p>
+                </label>
+              )
             )}
 
             <label className="text-sm font-medium text-stone-700">

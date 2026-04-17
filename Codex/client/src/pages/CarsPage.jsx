@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import api from "../api/client";
 import CarCard from "../components/CarCard";
+import { CardGridLoader } from "../components/ContentLoader";
 import SectionTitle from "../components/SectionTitle";
 import Seo from "../components/Seo";
 import { createBreadcrumbSchema, createLocalBusinessSchema } from "../utils/seo";
 
 export default function CarsPage() {
   const [cars, setCars] = useState([]);
+  const [loadingCars, setLoadingCars] = useState(true);
   const [filters, setFilters] = useState({
     maxPrice: "",
     seating: "",
@@ -14,10 +16,29 @@ export default function CarsPage() {
   });
 
   useEffect(() => {
+    let active = true;
     const params = Object.fromEntries(
       Object.entries(filters).filter(([, value]) => value !== "")
     );
-    api.get("/cars", { params }).then(({ data }) => setCars(data));
+
+    setLoadingCars(true);
+
+    api
+      .get("/cars", { params })
+      .then(({ data }) => {
+        if (active) {
+          setCars(data);
+        }
+      })
+      .finally(() => {
+        if (active) {
+          setLoadingCars(false);
+        }
+      });
+
+    return () => {
+      active = false;
+    };
   }, [filters]);
 
   return (
@@ -89,11 +110,24 @@ export default function CarsPage() {
               </label>
             </div>
           </aside>
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {cars.map((car) => (
-              <CarCard key={car._id} car={car} />
-            ))}
-          </div>
+          {loadingCars ? (
+            <CardGridLoader
+              count={6}
+              variant="car"
+              columnsClassName="grid gap-6 md:grid-cols-2 xl:grid-cols-3"
+            />
+          ) : (
+            <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+              {cars.map((car) => (
+                <CarCard key={car._id} car={car} />
+              ))}
+              {cars.length === 0 && (
+                <div className="glass-panel p-8 text-sm leading-7 text-stone-600 md:col-span-2 xl:col-span-3">
+                  No cars matched these filters yet.
+                </div>
+              )}
+            </div>
+          )}
         </div>
       </main>
     </>
