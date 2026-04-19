@@ -2,12 +2,19 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
+const HARDCODED_CLIENT_URL = "https://khajuraho-travells.vercel.app";
+const HARDCODED_SITE_URL = "https://khajuraho-travells.vercel.app";
+const HARDCODED_API_ORIGIN = "https://baton-pancreas-herself.ngrok-free.dev";
+const HARDCODED_API_URL = `${HARDCODED_API_ORIGIN}/api`;
+
 export const env = {
   port: process.env.PORT || 5000,
   mongoUri: process.env.MONGO_URI || "mongodb://127.0.0.1:27017/khajuraho-roads",
   jwtSecret: process.env.JWT_SECRET || "change-me-in-production",
-  clientUrl: process.env.CLIENT_URL || "http://localhost:5173",
-  siteUrl: process.env.SITE_URL || process.env.CLIENT_URL || "http://localhost:5173",
+  clientUrl: HARDCODED_CLIENT_URL,
+  siteUrl: HARDCODED_SITE_URL,
+  apiOrigin: HARDCODED_API_ORIGIN,
+  apiUrl: HARDCODED_API_URL,
   uploadDir: process.env.UPLOAD_DIR || "uploads",
   aiProvider: (process.env.AI_PROVIDER || "openai").toLowerCase(),
   ollamaBaseUrl: (process.env.OLLAMA_BASE_URL || "http://127.0.0.1:11434").replace(/\/$/, ""),
