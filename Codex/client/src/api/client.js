@@ -2,11 +2,16 @@ import axios from "axios";
 import { apiBaseUrl } from "../utils/apiBaseUrl";
 
 const api = axios.create({
-  baseURL: apiBaseUrl
+  baseURL: apiBaseUrl,
+  headers: {
+    "ngrok-skip-browser-warning": "true"
+  }
 });
 
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem("khajuraho_token");
+
+  config.headers["ngrok-skip-browser-warning"] = "true";
 
   if (token) {
     config.headers.Authorization = `Bearer ${token}`;
