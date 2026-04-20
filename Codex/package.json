@@ -12,6 +12,7 @@
     "build": "npm run build --workspace client",
     "start": "npm run start --workspace server",
     "seed": "npm run seed --workspace server",
-    "seo:sync": "npm run seo:sync --workspace server"
+    "seo:sync": "npm run seo:sync --workspace server",
+    "tunnel:start": "bash ./scripts/start-backend-ngrok.sh"
   }
 }

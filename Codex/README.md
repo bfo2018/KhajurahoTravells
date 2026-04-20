@@ -175,6 +175,20 @@ npm run dev:server
 npm run dev:client
 ```
 
+### 7. Start backend container + ngrok tunnel
+
+If your backend runs in Docker as `khajuraho-backend` on port `5050`, you can start the container, wait for `/api/health`, and open ngrok with one command:
+
+```bash
+npm run tunnel:start
+```
+
+Optional overrides:
+
+```bash
+CONTAINER_NAME=khajuraho-backend LOCAL_PORT=5050 npm run tunnel:start
+```
+
 Open:
 
 - Frontend: `http://localhost:5173`
